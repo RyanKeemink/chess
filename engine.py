@@ -36,22 +36,24 @@ class chessEngine:
                 if self.board[i][j] == king:
                     kingpos = (i, j)
                     break
-        directions = [(1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
-        for d in directions:
-            x, y = kingpos
-            steps = 0
-            while True:
-                steps += 1
-                x += d[0]
-                y += d[1]
-                if x < 0 or x > 7 or y < 0 or y > 7:
-                    break
-                if self.board[x][y] != None:
-                    if self.board[x][y].islower() == color.islower():
-                        break
-                    if self.board[x][y].lower() == "q" or self.board[x][y].lower() == "r":
+        RookDirections = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        BishopDirections = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
+        KnightMoves = [(2, 1), (2, -1), (-2, 1), (-2, -1), (1, 2), (1, -2), (-1, 2), (-1, -2)]
+        PawnMoves = [(1, 1), (1, -1)]
+
+        for move in RookDirections:
+            i, j = kingpos
+            while 0 <= i + move[0] < 8 and 0 <= j + move[1] < 8:
+                i += move[0]
+                j += move[1]
+                if self.board[i][j] is not None:
+                    if self.board[i][j] == "R" or self.board[i][j] == "Q":
                         return True
-                    break
+                    else:
+                        break
+
+
+
                 
 
 
