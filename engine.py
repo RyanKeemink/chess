@@ -52,6 +52,17 @@ class chessEngine:
                     else:
                         break
 
+        for move in BishopDirections:
+            i, j = kingpos
+            while 0 <= i + move[0] < 8 and 0 <= j + move[1] < 8:
+                i += move[0]
+                j += move[1]
+                if self.board[i][j] is not None:
+                    if self.board[i][j] == "B" or self.board[i][j] == "Q":
+                        return True
+                    else:
+                        break
+
 
 
                 
