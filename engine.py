@@ -68,9 +68,17 @@ class chessEngine:
             j += move[1]
             if  0 <= i + move[0] < 8 and 0 <= j + move[1] < 8:
                 if self.board[i][j] is not None:
-                    if self.board[i][j] == "K":
+                    if self.board[i][j] == "N":
                         return True
                     
+        for move in PawnMoves:
+            i += move[0]
+            j += move[1]
+            if  0 <= i + move[0] < 8 and 0 <= j + move[1] < 8:
+                if self.board[i][j] is not None:
+                    if self.board[i][j] == "P":
+                        return True
+
 
 
             
