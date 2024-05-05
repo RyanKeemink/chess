@@ -78,6 +78,16 @@ class chessEngine:
                 if self.board[i][j] is not None:
                     if self.board[i][j] == "P":
                         return True
+                    
+
+        return False
+    
+    def isCheckmate(self, color):
+        pass
+
+
+    def CheckMove(self, move):
+        pass
 
 
 
