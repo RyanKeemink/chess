@@ -89,6 +89,9 @@ class chessEngine:
     def CheckMove(self, move):
         pass
 
+    def checkPromotion(self, move):
+        pass
+
 
 
             
